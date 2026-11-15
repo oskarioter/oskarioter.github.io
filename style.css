@@ -134,7 +134,6 @@ section {
   display: grid;
   grid-template-columns: minmax(110px, 1fr) 2fr;
   gap: 20px;
-  align-items: baseline;
 }
 .cv-main .cv-block + .cv-block {
   margin-top: clamp(28px, 4vw, 48px);
@@ -143,15 +142,14 @@ section {
   width: 100%;
 }
 .cv-block h3 {
-  font-size: clamp(14px, 1.4vw, 18px);
-  letter-spacing: 0.02em;
+  font-size: clamp(20px, 2.4vw, 32px);
+  letter-spacing: -0.02em;
 }
 .cv-items { display: grid; gap: clamp(24px, 3vw, 40px); }
 .cv-item h4 {
-  font-size: clamp(22px, 2.6vw, 34px);
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  line-height: 1.05;
+  font-size: clamp(22px, 3vw, 40px);
+  letter-spacing: -0.03em;
+  line-height: 1;
 }
 .cv-item p {
   font-size: clamp(16px, 1.7vw, 22px);
@@ -255,6 +253,9 @@ footer a:hover { color: var(--accent); }
   .cv-block, .cv-skills { grid-template-columns: 1fr; gap: 12px; }
   .cv-skills ul { columns: 2; column-gap: 24px; }
   .cv-skills li { break-inside: avoid; }
+  /* Phone only: labels stay bold, item names go regular weight so they don't clash */
+  .cv-block h3 { font-size: 20px; }
+  .cv-item h4 { font-size: 24px; font-weight: 400; }
 
   /* Contact: keep the email on one line */
   .big-link { font-size: 6.3vw; word-break: normal; overflow-wrap: anywhere; }
