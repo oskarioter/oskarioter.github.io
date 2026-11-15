@@ -230,8 +230,30 @@ footer a:hover { color: var(--accent); }
   .about-grid { grid-template-columns: 1fr; }
   .cv-grid { grid-template-columns: 1fr; }
 }
+
+/* ===== MOBILE ONLY - nothing below changes the desktop version ===== */
+
+/* Phones: one full-width poster per row */
+@media (max-width: 600px) {
+  .grid { grid-template-columns: 1fr; gap: 20px; }
+}
+
 @media (max-width: 520px) {
-  .top { flex-direction: column; align-items: flex-start; gap: 10px; }
-  .top nav { flex-wrap: wrap; }
+  /* Header: smaller logo, menu on the same line */
+  .top { padding: 12px var(--pad); gap: 12px; }
+  .logo img { height: 28px; }
+  .top nav { gap: 12px; font-size: 12px; flex-wrap: wrap; justify-content: flex-end; }
+
+  /* Tighter spacing between sections */
+  section { padding-bottom: 48px; scroll-margin-top: 64px; }
+  #playground { padding-top: 24px; }
+  .section-head { margin-bottom: 24px; }
+
+  /* CV: stack blocks, skills in two columns */
   .cv-block, .cv-skills { grid-template-columns: 1fr; gap: 12px; }
+  .cv-skills ul { columns: 2; column-gap: 24px; }
+  .cv-skills li { break-inside: avoid; }
+
+  /* Contact: keep the email on one line */
+  .big-link { font-size: 6.3vw; word-break: normal; overflow-wrap: anywhere; }
 }
