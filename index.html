@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Oskar Terlecki — Graphic Designer, Sligo</title>
+  <meta name="description" content="Graphic designer based in Sligo, Ireland. Unique posters for local events.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="top">
+    <a href="#top" class="logo">OSKAR TERLECKI</a>
+    <nav>
+      <a href="#playground">Poster Playground</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <section class="hero">
+      <h1>Posters<br>for local<br>moments.</h1>
+      <p class="hero-sub">Graphic designer — Sligo, Ireland</p>
+    </section>
+
+    <!--
+      POSTER PLAYGROUND
+      To add your artwork: put image files in the "images" folder named
+      poster-01.jpg ... poster-09.jpg (or .png / .webp, just match the name in src below).
+      Until an image exists, a grey placeholder shows.
+      Edit the title and event line under each poster.
+    -->
+    <section id="playground">
+      <div class="section-head">
+        <h2>Poster Playground</h2>
+        <span class="count">09 projects</span>
+      </div>
+
+      <div class="grid">
+
+        <figure class="poster" data-title="Poster 01">
+          <div class="frame"><span class="ph">01</span><img src="images/poster-01.jpg" alt="Poster 01" loading="lazy" onerror="this.remove()"></div>
+          <figcaption><strong>Poster 01</strong><span>Event name · Year</span></figcaption>
+        </figure>
+
+        <figure class="poster" data-title="Poster 02">
+          <div class="frame"><span class="ph">02</span><img src="images/poster-02.jpg" alt="Poster 02" loading="lazy" onerror="this.remove()"></div>
+          <figcaption><strong>Poster 02</strong><span>Event name · Year</span></figcaption>
+        </figure>
+
+        <figure class="poster" data-title="Poster 03">
+          <div class="frame"><span class="ph">03</span><img src="images/poster-03.jpg" alt="Poster 03" loading="lazy" onerror="this.remove()"></div>
+          <figcaption><strong>Poster 03</strong><span>Event name · Year</span></figcaption>
+        </figure>
+
+        <figure class="poster" data-title="Poster 04">
+          <div class="frame"><span class="ph">04</span><img src="images/poster-04.jpg" alt="Poster 04" loading="lazy" onerror="this.remove()"></div>
+          <figcaption><strong>Poster 04</strong><span>Event name · Year</span></figcaption>
+        </figure>
+
+        <figure class="poster" data-title="Poster 05">
+          <div class="frame"><span class="ph">05</span><img src="images/poster-05.jpg" alt="Poster 05" loading="lazy" onerror="this.remove()"></div>
+          <figcaption><strong>Poster 05</strong><span>Event name · Year</span></figcaption>
+        </figure>
+
+        <figure class="poster" data-title="Poster 06">
+          <div class="frame"><span class="ph">06</span><img src="images/poster-06.jpg" alt="Poster 06" loading="lazy" onerror="this.remove()"></div>
+          <figcaption><strong>Poster 06</strong><span>Event name · Year</span></figcaption>
+        </figure>
+
+        <figure class="poster" data-title="Poster 07">
+          <div class="frame"><span class="ph">07</span><img src="images/poster-07.jpg" alt="Poster 07" loading="lazy" onerror="this.remove()"></div>
+          <figcaption><strong>Poster 07</strong><span>Event name · Year</span></figcaption>
+        </figure>
+
+        <figure class="poster" data-title="Poster 08">
+          <div class="frame"><span class="ph">08</span><img src="images/poster-08.jpg" alt="Poster 08" loading="lazy" onerror="this.remove()"></div>
+          <figcaption><strong>Poster 08</strong><span>Event name · Year</span></figcaption>
+        </figure>
+
+        <figure class="poster" data-title="Poster 09">
+          <div class="frame"><span class="ph">09</span><img src="images/poster-09.jpg" alt="Poster 09" loading="lazy" onerror="this.remove()"></div>
+          <figcaption><strong>Poster 09</strong><span>Event name · Year</span></figcaption>
+        </figure>
+
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="section-head">
+        <h2>About</h2>
+      </div>
+      <div class="about-grid">
+        <p class="lead">Driven by caffeine and curiosity.</p>
+        <div class="about-text">
+          <p>I'm a graphic designer based in Sligo, Ireland. My thing is creating unique posters for local events.</p>
+          <p>I treat design as a lifestyle &mdash; a way of translating moments into something people can feel. It's how I make sense of ideas, turning raw thoughts into something real.</p>
+          <p>I put my all and everything into what I do. I love good coffee, design and gritty prints.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-head">
+        <h2>Contact</h2>
+      </div>
+      <a class="big-link" href="mailto:Terleckidesign@gmail.com">Terleckidesign@gmail.com</a>
+      <ul class="links">
+        <li><a href="https://instagram.com/Terlecki.design" target="_blank" rel="noopener">Instagram</a></li>
+      </ul>
+      <p class="small">Available for event posters &amp; local projects.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <span>&copy; <span id="yr">2026</span> Oskar Terlecki</span>
+    <a href="#top">Back to top &uarr;</a>
+  </footer>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="close" aria-label="Close">&times;</button>
+    <img alt="">
+    <p class="cap"></p>
+  </div>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    const lb = document.getElementById('lightbox');
+    const lbImg = lb.querySelector('img');
+    const lbCap = lb.querySelector('.cap');
+
+    document.querySelectorAll('.poster').forEach(p => {
+      p.addEventListener('click', () => {
+        const img = p.querySelector('img');
+        if (!img) return; // placeholder, nothing to enlarge
+        lbImg.src = img.src;
+        lbCap.textContent = p.dataset.title;
+        lb.classList.add('open');
+        lb.setAttribute('aria-hidden', 'false');
+      });
+    });
+
+    function closeLb() {
+      lb.classList.remove('open');
+      lb.setAttribute('aria-hidden', 'true');
+    }
+    lb.addEventListener('click', closeLb);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
+  </script>
+</body>
+</html>
