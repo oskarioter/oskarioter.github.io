@@ -102,15 +102,6 @@ section {
   color: #c4c2ba;
 }
 
-figcaption {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  margin-top: 10px;
-  font-size: 13px;
-}
-figcaption span { color: var(--muted); font-weight: 400; }
-.poster:hover figcaption strong { color: var(--accent); }
 .poster:hover .ph { color: var(--accent); }
 
 /* ---------- About ---------- */
@@ -179,7 +170,6 @@ footer a:hover { color: var(--accent); }
 }
 .lightbox.open { display: flex; }
 .lightbox img { max-width: 100%; max-height: 82vh; object-fit: contain; }
-.lightbox .cap { margin-top: 14px; font-size: 14px; }
 .lightbox .close {
   position: absolute;
   top: 12px;

@@ -6,9 +6,11 @@ FILES
   style.css    colours, sizes, layout
   images/      put your poster images here
 
-1) ADD YOUR POSTERS
-   Save your 9 posters into the "images" folder named:
+1) YOUR POSTERS
+   The 9 posters are in the "images" folder as:
      poster-01.jpg, poster-02.jpg ... poster-09.jpg
+   To swap one, replace the file with a new image of the same name.
+   (logo.png in the same folder is your header logo - keep it there.)
    (JPG recommended. Aim for about 1200px wide and under 500KB each
    so the page loads fast.)
    If you use PNG or WEBP, open index.html and change ".jpg" to
@@ -20,7 +22,6 @@ FILES
      YOUR NAME            -> your name (appears in a few places)
      hello@yourname.com   -> your email
      instagram.com/yourhandle, behance.net/yourhandle -> your links
-     "Poster 01" / "Event name · Year" -> real titles and events
 
 3) CHANGE COLOURS
    Open style.css. The first block (":root") controls the background

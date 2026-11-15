@@ -26,7 +26,7 @@
       To add your artwork: put image files in the "images" folder named
       poster-01.jpg ... poster-09.jpg (or .png / .webp, just match the name in src below).
       Until an image exists, a grey placeholder shows.
-      Edit the title and event line under each poster.
+      To swap a poster, replace the image file in the images folder with the same name.
     -->
     <section id="playground">
       <div class="section-head">
@@ -36,49 +36,40 @@
 
       <div class="grid">
 
-        <figure class="poster" data-title="Poster 01">
-          <div class="frame"><span class="ph">01</span><img src="images/poster-01.jpg" alt="Poster 01" loading="lazy" onerror="this.remove()"></div>
-          <figcaption><strong>Poster 01</strong><span>Event name · Year</span></figcaption>
+        <figure class="poster">
+          <div class="frame"><span class="ph">01</span><img src="images/poster-01.jpg" alt="Poster: Confusing is good. Boring is bad." loading="lazy" onerror="this.remove()"></div>
         </figure>
 
-        <figure class="poster" data-title="Poster 02">
-          <div class="frame"><span class="ph">02</span><img src="images/poster-02.jpg" alt="Poster 02" loading="lazy" onerror="this.remove()"></div>
-          <figcaption><strong>Poster 02</strong><span>Event name · Year</span></figcaption>
+        <figure class="poster">
+          <div class="frame"><span class="ph">02</span><img src="images/poster-02.jpg" alt="Poster: Miles Davis Live" loading="lazy" onerror="this.remove()"></div>
         </figure>
 
-        <figure class="poster" data-title="Poster 03">
-          <div class="frame"><span class="ph">03</span><img src="images/poster-03.jpg" alt="Poster 03" loading="lazy" onerror="this.remove()"></div>
-          <figcaption><strong>Poster 03</strong><span>Event name · Year</span></figcaption>
+        <figure class="poster">
+          <div class="frame"><span class="ph">03</span><img src="images/poster-03.jpg" alt="Poster: No matter what evil I have to face in this life" loading="lazy" onerror="this.remove()"></div>
         </figure>
 
-        <figure class="poster" data-title="Poster 04">
-          <div class="frame"><span class="ph">04</span><img src="images/poster-04.jpg" alt="Poster 04" loading="lazy" onerror="this.remove()"></div>
-          <figcaption><strong>Poster 04</strong><span>Event name · Year</span></figcaption>
+        <figure class="poster">
+          <div class="frame"><span class="ph">04</span><img src="images/poster-04.jpg" alt="Poster: Not everything has to make sense" loading="lazy" onerror="this.remove()"></div>
         </figure>
 
-        <figure class="poster" data-title="Poster 05">
-          <div class="frame"><span class="ph">05</span><img src="images/poster-05.jpg" alt="Poster 05" loading="lazy" onerror="this.remove()"></div>
-          <figcaption><strong>Poster 05</strong><span>Event name · Year</span></figcaption>
+        <figure class="poster">
+          <div class="frame"><span class="ph">05</span><img src="images/poster-05.jpg" alt="Poster: Au Idó live at Oakmoon Café, Sligo" loading="lazy" onerror="this.remove()"></div>
         </figure>
 
-        <figure class="poster" data-title="Poster 06">
-          <div class="frame"><span class="ph">06</span><img src="images/poster-06.jpg" alt="Poster 06" loading="lazy" onerror="this.remove()"></div>
-          <figcaption><strong>Poster 06</strong><span>Event name · Year</span></figcaption>
+        <figure class="poster">
+          <div class="frame"><span class="ph">06</span><img src="images/poster-06.jpg" alt="Poster: Raygun-inspired It Might Get Loud" loading="lazy" onerror="this.remove()"></div>
         </figure>
 
-        <figure class="poster" data-title="Poster 07">
-          <div class="frame"><span class="ph">07</span><img src="images/poster-07.jpg" alt="Poster 07" loading="lazy" onerror="this.remove()"></div>
-          <figcaption><strong>Poster 07</strong><span>Event name · Year</span></figcaption>
+        <figure class="poster">
+          <div class="frame"><span class="ph">07</span><img src="images/poster-07.jpg" alt="Poster: Time is like a river" loading="lazy" onerror="this.remove()"></div>
         </figure>
 
-        <figure class="poster" data-title="Poster 08">
-          <div class="frame"><span class="ph">08</span><img src="images/poster-08.jpg" alt="Poster 08" loading="lazy" onerror="this.remove()"></div>
-          <figcaption><strong>Poster 08</strong><span>Event name · Year</span></figcaption>
+        <figure class="poster">
+          <div class="frame"><span class="ph">08</span><img src="images/poster-08.jpg" alt="Poster: We used to look up and wonder" loading="lazy" onerror="this.remove()"></div>
         </figure>
 
-        <figure class="poster" data-title="Poster 09">
-          <div class="frame"><span class="ph">09</span><img src="images/poster-09.jpg" alt="Poster 09" loading="lazy" onerror="this.remove()"></div>
-          <figcaption><strong>Poster 09</strong><span>Event name · Year</span></figcaption>
+        <figure class="poster">
+          <div class="frame"><span class="ph">09</span><img src="images/poster-09.jpg" alt="Poster: A for Astronaut live at Swagman" loading="lazy" onerror="this.remove()"></div>
         </figure>
 
       </div>
@@ -119,7 +110,6 @@
   <div class="lightbox" id="lightbox" aria-hidden="true">
     <button class="close" aria-label="Close">&times;</button>
     <img alt="">
-    <p class="cap"></p>
   </div>
 
   <script>
@@ -127,14 +117,13 @@
 
     const lb = document.getElementById('lightbox');
     const lbImg = lb.querySelector('img');
-    const lbCap = lb.querySelector('.cap');
 
     document.querySelectorAll('.poster').forEach(p => {
       p.addEventListener('click', () => {
         const img = p.querySelector('img');
         if (!img) return; // placeholder, nothing to enlarge
         lbImg.src = img.src;
-        lbCap.textContent = p.dataset.title;
+        lbImg.alt = img.alt;
         lb.classList.add('open');
         lb.setAttribute('aria-hidden', 'false');
       });
